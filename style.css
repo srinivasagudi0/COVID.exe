@@ -1,0 +1,23 @@
+body {
+    background-color: rgba(255, 0, 0, 0.82);
+}
+
+.disclaimer {
+    color: white;
+    font-size: 5px;
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+button {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 16px;
+}
