@@ -48,6 +48,17 @@
             color: #a5ffb5;
             font-size: clamp(10px, 1vw, 14px);
         }
+        .terminal-screen {
+            height: 45vh;
+            min-height: 230px;
+            overflow-y: auto;
+            padding: 3%;
+            color: #90ffac;
+            font-size: clamp(12px, 1.1vw, 17px);
+            line-height: 1.6;
+            margin-bottom: 1px;
+            overflow-wrap: anywhere;
+        }
     </style>
     <main>
         <span class="header">COVID.exe</span>
@@ -58,6 +69,13 @@
                 <span>$$$</span>
                 <span>COVID.exe - Historical Archive</span>
                 <span id="terminal-date">JAN 2020</span>
+            </div>
+            <div class="terminal-screen">
+                <p>COVID.exe [version 1.0]</p>
+                <p>Historical Investigation System</p>
+                <p>Initializing Archive...</p>
+                <p>Current Perood: January 2020</p>
+                <p>Type HELP to begin</p>
             </div>
         </div>
         
