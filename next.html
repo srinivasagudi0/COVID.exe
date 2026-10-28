@@ -56,8 +56,36 @@
             color: #90ffac;
             font-size: clamp(12px, 1.1vw, 17px);
             line-height: 1.6;
-            margin-bottom: 1px;
             overflow-wrap: anywhere;
+        }
+        .terminal-screen p {
+            margin: 0 0 1em;
+        }
+        .terminal form {
+            display:flex;
+            align-items: center;
+            gap: 2%;
+            border-top: 1px solid #34834a;
+            padding: 2%;
+        }
+        .terminal input {
+            flex:1;
+            min-width: 0;
+            width: 100%;
+            background: 100%;
+            border:none;
+            outline:none;
+            color: #baffca;
+            font-family: monospace;
+            font-size: clamp(12px, 1.1vw, 17px);
+        }
+        .terminal button {
+            background: #226b39;
+            color: white;
+            border:none;
+            padding: 1.5% 3%;
+            cursor: pointer;
+            border-radius: 5px;
         }
     </style>
     <main>
@@ -74,9 +102,20 @@
                 <p>COVID.exe [version 1.0]</p>
                 <p>Historical Investigation System</p>
                 <p>Initializing Archive...</p>
-                <p>Current Perood: January 2020</p>
+                <p>Current Period: January 2020</p>
                 <p>Type HELP to begin</p>
             </div>
+            <form id="terminal-form">
+                <span>&gt;</span>
+                <input
+                    id="terminal-input"
+                    type="text"
+                    placeholder="Enter a command..."
+                    autocomplete="off"
+                    aria-label="Terminal command"
+                >
+                <button type="submit">RUN</button>
+            </form>
         </div>
         
     </main>
