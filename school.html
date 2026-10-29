@@ -12,12 +12,12 @@
             <h2>Virtual Classroom</h2>
             <p>Teacher: "Can anyone hear me?"</p>
             <p>Teacher: "Hello? Am I muted?"</p>
-            <p>Status: Connected. Mentally? Absolutely not.</p>
+            <p>Status: Connected. Me9ntally? Absolutely not.</p>
             <p>Attendance: Present. Brain: AFK</p>
 
             <button>Leave Class</button>
-            <button>Mic: OFF</button>
-            <button>Camera: OFF</button>
+            <button id="mic-button">Mic: OFF</button>
+            <button id="camera-btn">Camera: OFF</button>
         </section>
         <section>
             <h2>Teacher Suspicion Meter</h2>
@@ -76,5 +76,23 @@
         </section>
         
         </main>
+        <script>
+            const micBtn = document.getElementById('mic-button');
+            const cameraBtn = document.getElementById('camera-btn');
+
+            let ismicOn = false;
+            let cameraON = false;
+            
+            micBtn.addEventListener('click',()=> {
+                ismicOn = !ismicOn;
+                micBtn.textContent = ismicOn ? "Mic: ON" : "Mic: OFF";
+                micBtn.style.backgroundColor = ismicOn ? "green" : "red";
+            })
+            cameraBtn.addEventListener('click',()=> {
+                cameraON = !cameraON;
+                cameraBtn.textContent = cameraON ? "Camera: ON" : "Camera: OFF";
+                cameraBtn.style.backgroundColor = cameraON ? "green" : "red";
+            })
+        </script>
 </body>
 </html>
