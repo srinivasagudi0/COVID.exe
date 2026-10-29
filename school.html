@@ -31,10 +31,9 @@
             <p>Teacher thinks you're taking notes.</p>
             <p>Meanwhile, fortnite is running at 240fps.</p>
 
-            <button>Play small Game</button>
-            <button>Act Normal (hide game)</button>
-            <p>Math Homework: 0%</p>
-            <p>Fortnite Wins: 0</p>
+            <button id="play-game">Play small Game</button>
+            <button id="hide-game">Act Normal (hide game)</button>
+            <p>Status: Nothing happening</p>
             <p>Teacher Warning: None</p>
         </section>
         <section>
@@ -92,6 +91,16 @@
                 cameraON = !cameraON;
                 cameraBtn.textContent = cameraON ? "Camera: ON" : "Camera: OFF";
                 cameraBtn.style.backgroundColor = cameraON ? "green" : "red";
+            })
+
+            const playGame = document.getElementById('play-game');
+            const hideGame = document.getElementById('hide-game');
+
+            playGame.addEventListener('click',()=> {
+                alert("You are now playing a game. Teacher");
+            })
+            hideGame.addEventListener('click',()=> {
+                alert("You are now hiding the game. Teacher");
             })
         </script>
 </body>
