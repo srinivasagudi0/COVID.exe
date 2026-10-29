@@ -125,15 +125,17 @@
         <section>
             <h2>2020: The World Changes</h2>
             <p>Welcome to 2020, Everything is going wrong, and somehow everyone is on Zoom.</p>
-            <h2>Investigaton Report</h2>
-            <h3>Select a report to begin</h3>
 
-            <button>Jobs & Unemployment</button>
-            <button>Poverty & Financial Struggles</button>
-            <button>Health & Hospitals</button>
-            <button>Daily Life & Lockdowns</button>
-            <button>Schools & Education</button>
-            <button>New Skills & Hobbies</button>
+            <button onclick="showReport('jobs')">Jobs & Unemployment</button>
+            <button onclick="showReport('poverty')">Poverty & Financial Struggles</button>
+            <button onclick="showReport('health')">Health & Hospitals</button>
+            <button onclick="showReport('daily')">Daily Life & Lockdowns</button>
+            <button onclick="showReport('schools')">Schools & Education</button>
+            <button onclick="showReport('hobbies')">New Skills & Hobbies</button>
+
+            <h3>Investigation Report</h3>
+            <p id="report-output">Select a report to begin.</p>
+
         </section>
         <button id="continue-btn">Continue to Online School -></button>
          
@@ -144,7 +146,7 @@
         const screen = document.querySelector('.terminal-screen')
 
         
-const commands = {
+    const commands = {
     HELP: [
         "COMMANDS: JAN, FEB, MAR, CLEAR, NEXT.",
         "TIP: Type JAN to investigate January 2020.",
@@ -216,5 +218,118 @@ const commands = {
             screen.appendChild(output);
             screen.scrollTop = screen.scrollHeight;
         })
+
+
+const reports = {
+    jobs: `JOBS & UNEMPLOYMENT
+
+    In 2020, millions of people lost their jobs or had their working hours reduced.
+
+    According to the International Labour Organization, 8.8% of global working hours were lost in 2020. That was equivalent to 255 million full-time jobs.
+
+    Restaurants, shops, hotels, and many other businesses were severely affected.
+
+    Some people started working from home, while others could not work remotely.
+
+    For many families, this was a period of uncertainty and financial hardship.`,
+
+        poverty: `POVERTY & FINANCIAL STRUGGLES
+
+    The pandemic caused serious financial problems around the world.
+
+    According to the World Bank, about 70 million additional people fell into extreme poverty in 2020.
+
+    Families struggled with lost income, rent, food expenses, and other essential needs.
+
+    Some governments provided emergency financial assistance, while charities and communities helped people in need.
+
+    The pandemic showed how differently a global crisis could affect people's lives.`,
+
+        health: `HEALTH & HOSPITALS
+
+    COVID-19 created a worldwide public health emergency.
+
+    Hospitals faced growing numbers of patients, and healthcare workers faced dangerous and exhausting conditions.
+
+    COVID-19 could cause serious illness, hospitalization, and death.
+
+    Medical workers, researchers, and public health teams worked to treat patients and understand the disease.
+
+    The pandemic also disrupted routine healthcare and affected people's mental health.
+
+    This was one of the most serious consequences of the pandemic.`,
+    
+
+    daily: `DAILY LIFE & LOCKDOWNS
+
+    Welcome to 2020. Your house is now your office, restaurant, gym, movie theater, and entire social life.
+
+    Going outside? Congratulations, you've unlocked a new mission: Buy Milk Without Touching Anything.
+
+    Hand sanitizer became everyone's favorite accessory.
+
+    Toilet paper apparently became more valuable than gold. Nobody knew why. Everybody wanted it.
+
+    Your daily commute went from 30 minutes to 12 steps.
+
+    Monday: Stay home.
+    Tuesday: Stay home.
+    Wednesday: Stay home, but with different pajamas.
+
+    The outside world is temporarily unavailable. Please try again later.`,
+
+    schools: `SCHOOLS & EDUCATION
+
+    Welcome to online school, where your bedroom is your classroom and your teacher lives inside a laptop.
+
+    Attendance: PRESENT.
+    Brain: AFK.
+
+    Teacher: "Can everyone hear me?"
+    Students: "You're muted."
+    Teacher: "What about now?"
+    Students: "STILL MUTED."
+
+    Your internet works perfectly during Fortnite but mysteriously collapses during math class.
+
+    Camera: OFF.
+    Microphone: OFF.
+    Motivation: NOT FOUND.
+
+    Homework is now a PDF with 47 confusing instructions.
+
+    Congratulations! You've survived another day of pretending your microphone doesn't work.`,
+
+    hobbies: `NEW SKILLS & HOBBIES
+
+    Welcome to lockdown. You've officially unlocked unlimited opportunities to become a completely different person.
+
+    Day 1: I'm going to learn Python.
+    Day 2: I'm building the next Google.
+    Day 3: Why is there a SyntaxError on line 2?
+
+    Everyone suddenly became a professional chef.
+
+    Banana bread was practically its own economy.
+
+    Your friend started a YouTube channel.
+    Your cousin became a fitness influencer.
+    You downloaded Blender and immediately closed it.
+
+    Gaming hours: 2.
+    Gaming hours after lockdown: Classified.
+
+    Some people discovered amazing talents.
+    Others discovered they could sleep until noon.
+
+    Achievement Unlocked: Survived 2020 Without Learning Guitar.`
+
+    };
+
+    function showReport(report) {
+        const output = document.getElementById('report-output');
+        output.textContent = reports[report] || "Report not found.";
+    }
+
     </script>
 </html>
