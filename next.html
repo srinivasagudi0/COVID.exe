@@ -143,12 +143,60 @@
         const input = document.getElementById('terminal-input')
         const screen = document.querySelector('.terminal-screen')
 
-        const commands = {
-            HELP: "Available commands: HELP, JAN, FEB, MAR, CLEAR, NEXT",
-            JAN: "January 2020: WHO(not literally who) declares a global health emergency. The world is starting to take notice of the virus.",
-            FEB: "February 2020: The virus spreads to more countries. People start to panic and stock up on supplies. The world is starting to realize the severity of the situation.",
-            MAR: "March 2020: The virus spreads rapidly. Countries start to implement lockdowns and social distancing measures. The world is starting to feel the impact of the pandemic.",
-        }
+        
+const commands = {
+    HELP: [
+        "COMMANDS: JAN, FEB, MAR, CLEAR, NEXT.",
+        "TIP: Type JAN to investigate January 2020.",
+        "TIP: Type FEB to investigate February 2020.",
+        "TIP: Type MAR to investigate March 2020.",
+        "TIP: CLEAR wipes the terminal screen.",
+        "TIP: NEXT takes you to the Online School simulator.",
+        "TIP: You can repeat a month to discover more facts!",
+        "ARCHIVE TIP: The pandemic affected jobs, schools, hospitals, and daily life.",
+        "SECRET: Try exploring all three months before continuing.",
+        "SYSTEM: Historical Archive operational. Keep investigating!"
+    ],
+
+    JAN: [
+        "January 2020: Scientists identified a new coronavirus.",
+        "January 2020: Wuhan entered lockdown on January 23.",
+        "January 2020: WHO declared a global public health emergency on January 30.",
+        "January 2020: The first confirmed US case was announced on January 21.",
+        "January 2020: The virus was initially known as 2019-nCoV.",
+        "January 2020: Researchers shared the virus's genetic sequence.",
+        "January 2020: Cases were reported outside China.",
+        "January 2020: Airports began introducing health screening measures.",
+        "January 2020: Scientists started developing diagnostic tests.",
+        "January 2020: Many people were still going to school and work normally."
+    ],
+
+    FEB: [
+        "February 2020: WHO announced the name COVID-19 on February 11.",
+        "February 2020: The virus continued spreading internationally.",
+        "February 2020: Italy began introducing restrictions in affected areas.",
+        "February 2020: The Diamond Princess cruise ship experienced a major outbreak.",
+        "February 2020: Scientists worldwide continued researching the virus.",
+        "February 2020: Some schools in affected regions temporarily closed.",
+        "February 2020: Governments prepared emergency health responses.",
+        "February 2020: South Korea experienced a rapid increase in reported cases.",
+        "February 2020: Public health officials encouraged handwashing.",
+        "February 2020: Many people had not yet experienced lockdowns."
+    ],
+
+    MAR: [
+        "March 2020: WHO characterized COVID-19 as a pandemic on March 11.",
+        "March 2020: Many schools switched to remote learning.",
+        "March 2020: Video calls became essential for work and education.",
+        "March 2020: Many countries introduced travel restrictions.",
+        "March 2020: Some supermarkets experienced panic buying.",
+        "March 2020: Healthcare workers faced increasing pressure.",
+        "March 2020: Many businesses temporarily closed.",
+        "March 2020: People began practicing physical distancing.",
+        "March 2020: Some students suddenly had to attend class from home.",
+        "March 2020: Online gaming became one way people stayed connected."
+    ]
+    };
 
         form.addEventListener('submit', function(event){
             event.preventDefault()
@@ -164,7 +212,7 @@
                 return;
             }
             const output = document.createElement('p');
-            output.textContent = commands[command] || "Unknown command. Type HELP for a list of commands.";
+            output.textContent = commands[command][Math.floor(Math.random() * commands[command].length)] || "Unknown command. Type HELP for a list of commands.";
             screen.appendChild(output);
             screen.scrollTop = screen.scrollHeight;
         })
