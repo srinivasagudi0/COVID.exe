@@ -36,10 +36,46 @@
         const scanStatus = document.getElementById('scan-status');
         const threatStatus = document.getElementById('threat-status');
 
-        scanBtn.addEventListener('click', ()=> {
-            scanStatus.textContent = 'Scan Status: Completed';
-            threatStatus.textContent = 'Threat Detected: COVID-19';
-        })
+        
+scanBtn.addEventListener("click", async function () {
+    scanBtn.disabled = true;
+
+    scanStatus.style.fontFamily = "monospace";
+    threatStatus.style.fontFamily = "monospace";
+    scanStatus.style.fontSize = "1.3rem";
+    threatStatus.style.fontSize = "1.3rem";
+
+    const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+    scanStatus.textContent = "Initializing diagnostics...";
+    scanStatus.style.color = "yellow";
+    await wait(900);
+
+    scanStatus.textContent = "Scanning global health records...";
+    await wait(1200);
+
+    scanStatus.textContent = "WARNING: Unusual activity detected!";
+    scanStatus.style.color = "orange";
+    await wait(1000);
+
+    scanStatus.textContent = "SCAN COMPLETE — THREAT FOUND";
+    scanStatus.style.color = "red";
+
+    threatStatus.textContent = "⚠ COVID-19 DETECTED";
+    threatStatus.style.color = "red";
+    threatStatus.style.fontWeight = "bold";
+
+    threatStatus.animate(
+        [
+            { opacity: 0, transform: "scale(0.8)" },
+            { opacity: 1, transform: "scale(1.1)" },
+            { opacity: 1, transform: "scale(1)" }
+        ],
+        { duration: 700, easing: "ease-out" }
+    );
+
+    scanBtn.textContent = "SCAN COMPLETE";
+    });
 
 
     </script>
