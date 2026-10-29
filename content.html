@@ -76,9 +76,12 @@
             <h2>Predict the Future</h2>
             <p>December 2019: A mysterious illness is spreading across the globe.</p>
             <p>What do you think happens next?</p>
-            <button>Nothing serious</button>
-            <button>Maybe a big problem</button>
-            <button>Global Crisis</button>
+            <button id="nothing" onclick="predict('Nothing Serious')">Nothing serious</button>
+            <button id="problem" onclick="predict('Big Problem?')">Maybe a big problem</button>
+            <button id="crisis" onclick="predict('Global Crisis')">Global Crisis</button>
+
+            <p id="prediction">Your Prediction: NONE</p>
+            <p id="outcome">Actual Outcome: CLASSIFIED</p>
             <button onclick="fast_forward()">Fast Forward to 2020</button>
         </section>
     
@@ -87,6 +90,19 @@
     <script>
         function fast_forward() {
             window.location.href = "next.html";
+        }
+        function predict(choice) {
+            const result = document.getElementById('prediction');
+            result.textContent = "Your Prediction: " + choice;
+            result.style.color = "blue";
+            result.style.fontFamily = "monospace";
+
+            result.animate(
+                [
+                {opacity: 0, transform: "scale(0.8)"},
+                {opacity: 1, transform: "scale(1.1)"}
+                ], { duration: 700, easing: "ease-out" }
+            )
         }
     </script>
 
