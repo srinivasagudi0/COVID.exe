@@ -16,9 +16,9 @@
             <p>Social Life: avaialable</p>
             <p>Toilet Paper Supply: Abundant</p>
 
-            <button>Run Diagnostic </button>
-            <p>Scan Status: Not started</p>
-            <p>Threat Detected: UNKNOWN</p>
+            <button id="scan-btn">Run Diagnostic </button>
+            <p id="scan-status">Scan Status: Not started</p>
+            <p id="threat-status">Threat Detected: UNKNOWN</p>
         </section>
         <button id="get-started" onclick="getStarted()">Get Started!</button>
         <p class="disclaimer">Don't take this seriously, it is just a joke.</p>
@@ -32,6 +32,16 @@
         function getStarted() {
             window.location.href = "content.html";
         }
+        const scanBtn = document.getElementById('scan-btn');
+        const scanStatus = document.getElementById('scan-status');
+        const threatStatus = document.getElementById('threat-status');
+
+        scanBtn.addEventListener('click', ()=> {
+            scanStatus.textContent = 'Scan Status: Completed';
+            threatStatus.textContent = 'Threat Detected: COVID-19';
+        })
+
+
     </script>
     </body>
 </html>
