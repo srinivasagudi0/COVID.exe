@@ -32,6 +32,9 @@
             <p>Meanwhile, fortnite is running at 240fps.</p>
 
             <button id="play-game">Play small Game</button>
+            <div id="game-container" hidden>
+                <iframe height="167" frameborder="0" width="552" src="https://itch.io/embed/5247017"><a href="https://srinivasagudi0.itch.io/first-game">First Game by srinivasagudi0</a></iframe>
+            </div>
             <button id="hide-game">Act Normal (hide game)</button>
             <p>Status: Nothing happening</p>
             <p>Teacher Warning: None</p>
@@ -102,6 +105,15 @@
             hideGame.addEventListener('click',()=> {
                 alert("You are now hiding the game. Teacher");
             })
+            const gameContainer = document.getElementById("game-container");
+
+            playGame.addEventListener("click", () => {
+                gameContainer.hidden = false;
+            });
+
+            hideGame.addEventListener("click", () => {
+                gameContainer.hidden = true;
+            });
         </script>
 </body>
 </html>
