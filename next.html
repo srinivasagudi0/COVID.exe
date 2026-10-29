@@ -139,5 +139,34 @@
          
     </main>
     <script>
+        const form = document.getElementById('terminal-form')
+        const input = document.getElementById('terminal-input')
+        const screen = document.querySelector('.terminal-screen')
+
+        const commands = {
+            HELP: "Available commands: HELP, JAN, FEB, MAR, CLEAR, NEXT",
+            JAN: "January 2020: WHO(not literally who) declares a global health emergency. The world is starting to take notice of the virus.",
+            FEB: "February 2020: The virus spreads to more countries. People start to panic and stock up on supplies. The world is starting to realize the severity of the situation.",
+            MAR: "March 2020: The virus spreads rapidly. Countries start to implement lockdowns and social distancing measures. The world is starting to feel the impact of the pandemic.",
+        }
+
+        form.addEventListener('submit', function(event){
+            event.preventDefault()
+            const command = input.value.trim().toUpperCase();
+            input.value = '';
+            if (command == "CLEAR")
+            {
+                screen.innerHTML = '';
+                return;
+            }
+            if (command == "NEXT") {
+                window.location.href = "school.html";
+                return;
+            }
+            const output = document.createElement('p');
+            output.textContent = commands[command] || "Unknown command. Type HELP for a list of commands.";
+            screen.appendChild(output);
+            screen.scrollTop = screen.scrollHeight;
+        })
     </script>
 </html>
