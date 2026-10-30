@@ -20,10 +20,11 @@
         </section>
         <section>
             <h2>Teacher Suspicion Meter</h2>
-            <p>Teacher Suspicion: 0%</p>
-            <progress value="0" max="100"></progress>
-            <button>Pretend to Take Notes</button>
-            <button>Alt + tab emergency</button>
+            <p id="suspicion-text">Teacher Suspicion: 0%</p>
+            <progress id="suspicion-bar" value="0" max="100"></progress>
+            <p id="teacher-status">Teacher Status: Not Suspicious</p>
+            <button id="take-notes">Pretend to Take Notes</button>
+            <button id="emergency">Alt + tab emergency</button>
         </section>
         <section>
             <h2>Definitely Studying...</h2>
@@ -97,22 +98,79 @@
 
             const playGame = document.getElementById('play-game');
             const hideGame = document.getElementById('hide-game');
-
-            playGame.addEventListener('click',()=> {
-                alert("You are now playing a game. Teacher");
-            })
-            hideGame.addEventListener('click',()=> {
-                alert("You are now hiding the game. Teacher");
-            })
             const gameContainer = document.getElementById("game-container");
 
             playGame.addEventListener("click", () => {
+                if (suspicion >= 100) return;
+
                 gameContainer.hidden = false;
+                isPlaying = true;
+                updateSuspicion(20);
             });
 
             hideGame.addEventListener("click", () => {
                 gameContainer.hidden = true;
+                isPlaying = false;
+                updateSuspicion(-10);
             });
+
+                        
+            let suspicion = 0;
+            let isPlaying = false;
+
+            const suspicionBar = document.getElementById("suspicion-bar");
+            const suspicionText = document.getElementById("suspicion-text");
+            const teacherStatus = document.getElementById("teacher-status");
+
+            function updateSuspicion(amount) {
+                suspicion = Math.max(0, Math.min(100, suspicion + amount));
+
+                suspicionBar.value = suspicion;
+                suspicionText.textContent = `Teacher Suspicion: ${suspicion}%`;
+
+                if (suspicion >= 100) {
+                    teacherStatus.textContent = "🚨 CAUGHT! The teacher saw your game!";
+                    teacherStatus.style.color = "red";
+                    isPlaying = false;
+                    gameContainer.hidden = true;
+                } else if (suspicion >= 60) {
+                    teacherStatus.textContent = "⚠️ Teacher is watching you...";
+                    teacherStatus.style.color = "orange";
+                } else {
+                    teacherStatus.textContent = "Teacher Status: Not Suspicious";
+                    teacherStatus.style.color = "green";
+                }
+            }
+
+            playGame.addEventListener("click", () => {
+                if (suspicion >= 100) return;
+                isPlaying = true;
+                updateSuspicion(20);
+            });
+
+            hideGame.addEventListener("click", () => {
+                isPlaying = false;
+                updateSuspicion(-10);
+            });
+
+            document.getElementById("take-notes").addEventListener("click", () => {
+                isPlaying = false;
+                gameContainer.hidden = true;
+                updateSuspicion(-15);
+            });
+
+            document.getElementById("emergency").addEventListener("click", () => {
+                isPlaying = false;
+                gameContainer.hidden = true;
+                updateSuspicion(-25);
+            });
+
+            setInterval(() => {
+                if (isPlaying && suspicion < 100) {
+                    updateSuspicion(5);
+                }
+            }, 3000);
+
         </script>
 </body>
 </html>
