@@ -1,0 +1,416 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Press+Start+2P&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #edf5fc;
+    color: #14283b;
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.school-page {
+    max-width: 1600px;
+    margin: auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 16px;
+}
+
+.school-page > h1 {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin: 0 0 4px;
+    padding: 28px 16px;
+    background: #b9ddfb;
+    color: #102b43;
+    border-radius: 12px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: clamp(18px, 2.5vw, 30px);
+    line-height: 1.8;
+    box-shadow: 0 4px 12px #b6cbdc;
+}
+
+section {
+    min-width: 0;
+    background: #f8fbff;
+    border: 1px solid #c7d7e6;
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 4px 10px #c8d5e1;
+    overflow: hidden;
+}
+
+section h2 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: -18px -18px 18px;
+    padding: 12px 16px;
+    background: #d3e7f8;
+    color: #10283e;
+}
+
+section h3 {
+    font-size: 15px;
+    margin: 12px 0 8px;
+}
+
+section p {
+    margin: 9px 0;
+}
+
+section li {
+    margin: 8px 0;
+}
+
+button {
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 7px;
+    background: #287eae;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s, filter 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:focus-visible {
+    outline: 3px solid #f4ae35;
+    outline-offset: 3px;
+}
+
+.classroom {
+    background: #f7fbff;
+}
+
+.classroom h2 {
+    background: #17394e;
+    color: white;
+}
+
+.classroom p {
+    font-size: 13px;
+}
+
+.classroom p:nth-of-type(1),
+.classroom p:nth-of-type(2) {
+    background: #e7f0f8;
+    padding: 12px;
+    border-left: 4px solid #3997d0;
+    border-radius: 5px;
+}
+
+.classroom button {
+    margin: 6px 4px 0 0;
+}
+
+#leave-class {
+    background: #d3dbe2;
+    color: #14283b;
+}
+
+#mic-button,
+#camera-btn {
+    background: #e63e42;
+    color: white;
+}
+.suspicion-panel {
+    background: #fff5f5;
+}
+
+.suspicion-panel h2 {
+    background: #f5caca;
+}
+
+#suspicion-text {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 16px 0;
+}
+
+#suspicion-bar {
+    display: block;
+    width: 100%;
+    height: 25px;
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+#suspicion-bar::-webkit-progress-bar {
+    background: #d6dde3;
+    border-radius: 12px;
+}
+
+#suspicion-bar::-webkit-progress-value {
+    background: #28c97c;
+    border-radius: 12px;
+    transition: width 0.3s;
+}
+
+#suspicion-bar::-moz-progress-bar {
+    background: #28c97c;
+    border-radius: 12px;
+}
+
+#teacher-status {
+    padding: 12px;
+    background: #e1f7e9;
+    color: #167a40;
+    border-radius: 7px;
+    font-weight: bold;
+    margin: 18px 0;
+}
+
+#take-notes {
+    background: #318ac0;
+    margin: 5px 0;
+}
+
+#emergency {
+    background: #ffcd45;
+    color: #18283b;
+    margin: 5px 0;
+}
+
+/* GAME SECTION */
+
+.game-panel {
+    background: #f4f5ff;
+    text-align: center;
+    border-top: 5px solid #aaa4e7;
+}
+
+#play-game {
+    display: block;
+    width: 85%;
+    margin: 8px auto 15px;
+    background: #18954b;
+}
+
+#hide-game {
+    display: block;
+    margin: 14px auto;
+    background: #e65a73;
+}
+
+#game-container {
+    width: 100%;
+    margin: 12px auto;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #17283a;
+}
+
+#game-container[hidden] {
+    display: none;
+}
+
+#game-container iframe {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    border: none;
+    aspect-ratio: 640 / 380;
+    height: auto;
+}
+
+.game-panel p {
+    text-align: left;
+    background: #e3e9fc;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 12px;
+}
+
+/* TEACHER CHAT */
+
+.teacher-chat {
+    grid-column: 1 / -1;
+    background: #e6f3ff;
+    border-top: 5px solid #9ccdf0;
+}
+
+.teacher-chat::before {
+    content: "Teacher Chat";
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.teacher-chat p {
+    background: white;
+    border-left: 4px solid #58a4d9;
+    padding: 12px;
+    border-radius: 6px;
+}
+
+/* GOOD VS BAD */
+
+.pros-cons {
+    background: #f4fff8;
+}
+
+.pros-cons h2 {
+    background: #bcebcf;
+}
+
+.pros-cons h3:first-of-type {
+    color: #168345;
+}
+
+.pros-cons h3:nth-of-type(2) {
+    color: #c42e36;
+    margin-top: 24px;
+}
+
+.pros-cons p {
+    padding-left: 12px;
+    border-left: 3px solid #9adbb6;
+    font-size: 12px;
+}
+
+/* G-FUEL SECTION */
+
+.gfuel-section {
+    background: #fff8f1;
+}
+
+.gfuel-section h2 {
+    background: #ffd6b6;
+}
+
+.gfuel-section h3 {
+    color: #a64e1b;
+    font-size: 18px;
+}
+
+.gfuel-section li {
+    font-size: 12px;
+    line-height: 1.7;
+    padding-left: 4px;
+}
+
+/* REPORT CARD */
+
+.report-card {
+    background: #f8f5ff;
+}
+
+.report-card h2 {
+    background: #ded2fb;
+}
+
+.report-card p {
+    padding: 12px;
+    background: #eae5fc;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#finish-school {
+    background: #199954;
+    margin: 8px 5px 0 0;
+}
+
+#restart {
+    background: #607f96;
+    margin: 8px 0 0;
+}
+
+/* TABLETS */
+
+@media (max-width: 1100px) {
+    .school-page {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .game-panel {
+        grid-column: 1 / -1;
+    }
+
+    .teacher-chat {
+        grid-column: 1 / -1;
+    }
+
+    .report-card {
+        grid-column: 1 / -1;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+    .school-page {
+        grid-template-columns: 1fr;
+        padding: 12px;
+        gap: 14px;
+    }
+
+    .school-page > h1,
+    .teacher-chat,
+    .game-panel,
+    .report-card {
+        grid-column: 1;
+    }
+
+    .school-page > h1 {
+        padding: 22px 12px;
+        font-size: 18px;
+    }
+
+    section {
+        padding: 14px;
+    }
+
+    section h2 {
+        margin: -14px -14px 14px;
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 12px;
+    }
+
+    .classroom button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    #take-notes,
+    #emergency,
+    #finish-school,
+    #restart {
+        width: 100%;
+        margin: 6px 0;
+    }
+
+    #play-game {
+        width: 100%;
+    }
+}
