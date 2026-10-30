@@ -26,6 +26,7 @@ body {
     margin-top: 0px;
     font-size: 4rem;
     text-decoration: underline;
+    font-family: 'Fira Code', monospace;
 }
 
 .system-check p {
@@ -46,6 +47,29 @@ body {
     font-size: clamp(18px, 2vw, 26px);
     padding: 18px 35px;
     cursor: pointer;
+}
+
+.footer {
+    border: 2px solid yellow;
+    border-radius: 2px;
+}
+
+.footer h1 {
+    text-align: center;
+    color: yellow;
+    margin-top: 0px;
+    font-size: 4rem;
+    font-family: 'Pixelify Sans', sans-serif;
+    text-decoration: underline;
+}
+
+.footer p {
+    font-size: 2rem;
+    margin: 5px 0;
+    text-align: center;
+    color: white;
+    margin-bottom: 10px;
+    font-style: italic;
 }
 
 .info-box {
@@ -77,6 +101,7 @@ h2 {
     margin-bottom: 0px;
     margin-top:0px;
     font-family: 'Creepster', cursive;
+    text-align: center;
     color: rgb(11, 93, 11);
 }
 .head p{
