@@ -27,10 +27,6 @@
             <button id="emergency">Alt + tab emergency</button>
         </section>
         <section>
-            <h2>Definitely Studying...</h2>
-            <p>Teacher thinks you're taking notes.</p>
-            <p>Meanwhile, fortnite is running at 240fps.</p>
-
             <button id="play-game">Play small Game</button>
             <div id="game-container" hidden>
                 <iframe frameborder="0" src="https://itch.io/embed-upload/20108484?color=333333" allowfullscreen="" width="640" height="380"><a href="https://srinivasagudi0.itch.io/first-game">Play First Game on itch.io</a></iframe>
@@ -141,17 +137,6 @@
                     teacherStatus.style.color = "green";
                 }
             }
-
-            playGame.addEventListener("click", () => {
-                if (suspicion >= 100) return;
-                isPlaying = true;
-                updateSuspicion(20);
-            });
-
-            hideGame.addEventListener("click", () => {
-                isPlaying = false;
-                updateSuspicion(-10);
-            });
 
             document.getElementById("take-notes").addEventListener("click", () => {
                 isPlaying = false;
