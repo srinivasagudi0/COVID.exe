@@ -137,7 +137,7 @@
             <p id="report-output">Select a report to begin.</p>
 
         </section>
-        <button id="continue-btn">Continue to Online School -></button>
+        <button id="continue-btn" onclick="connectButton()">Continue to Online School -></button>
          
     </main>
     <script>
@@ -329,6 +329,10 @@ const reports = {
     function showReport(report) {
         const output = document.getElementById('report-output');
         output.textContent = reports[report] || "Report not found.";
+    }
+
+    function connectButton() {
+        window.location.href = "school.html";
     }
 
     </script>

@@ -14,7 +14,7 @@
             <p>Status: Connected. Mentally? Absolutely not.</p>
             <p>Attendance: Present. Brain: AFK</p>
 
-            <button>Leave Class</button>
+            <button id="leave-class">Leave Class</button>
             <button id="mic-button">Mic: OFF</button>
             <button id="camera-btn">Camera: OFF</button>
         </section>
@@ -69,8 +69,8 @@
             <p>Teacher Interruptions: 0</p>
             <p>Student Title: Unknown</p>
 
-            <button>Finish School</button>
-            <button>Restart</button>
+            <button id="finish-school">Finish School</button>
+            <button id="restart">Restart</button>
         </section>
         
         </main>
@@ -156,6 +156,18 @@
                 }
             }, 3000);
 
+        document.getElementById("leave-class").addEventListener("click", () => {
+                window.location.href = "next.html";
+            });
+        document.getElementById("finish-school").onclick = () => {
+            alert("School completed! You survived online classes.");
+            document.querySelector("h2").scrollIntoView({
+                behavior: "smooth"
+            });
+        };
+        document.getElementById("restart").addEventListener("click", () => {
+                window.location.href = "school.html";
+            });
         </script>
 </body>
 </html>
