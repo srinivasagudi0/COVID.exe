@@ -46,6 +46,9 @@ body {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
+    background-color: rosybrown;
+    border: 1px solid black;
+
 }
 
 .num1 {
@@ -91,3 +94,11 @@ p {
     font-size: clamp(18px, 2vw, 25px);
     line-height: 1.6;
 }
+.info {
+    background:rgba(255, 0, 0, 0.6);
+    margin-top: 40px;
+    font-size: 10px;
+    border:white 2px solid;
+    border-radius: 2px;
+}
+
