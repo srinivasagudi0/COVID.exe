@@ -42,8 +42,29 @@ body {
     color: rgb(145, 4, 4);
     margin-top: 0px;
 }
+.images {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
 
+.num1 {
+    height:500px;
+    width: 35%;
+    margin-top:20px
+}
 
+.num3 {
+    height: 500px;
+    width: 40%;
+    margin-top:20px
+}
+
+.num4 {
+    height: 50%;
+    width: 50%;
+    margin-top:20px
+}
 body {
     min-height: 100vh;
     margin: 0;
