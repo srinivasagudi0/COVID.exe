@@ -28,9 +28,21 @@ body {
     font-family: sans-serif;
     color: gray;
 }  
-h2 {
-    color:red;
+
+.beginning {
+    background-color: rgba(40, 51, 60, 0.592);
+    border-radius: 10px;
+    padding: 20px;
+    display: inline-grid;
+    max-width: 50%;
+    margin-top: 20px;
 }
+
+.beginning h2 {
+    color: rgb(145, 4, 4);
+    margin-top: 0px;
+}
+
 
 body {
     min-height: 100vh;
