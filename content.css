@@ -102,3 +102,32 @@ p {
     border-radius: 2px;
 }
 
+.prediction {
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+    max-width:50%;
+    margin-top: 20px ;
+}
+
+.prediction h2 {
+    font-family: 'Mystery Quest', cursive;
+    color:blue;
+    margin-top: 2px;
+    margin-left:10px;
+    margin-bottom:0px;
+}
+
+.prediction p {
+    margin-left:10px;
+}
+
+.prediction button {
+    background-color:bisque;
+    margin:10px;
+}
+
+.prediction button:hover {
+    background-color: rgb(5, 123, 227);
+    color:white;
+}
