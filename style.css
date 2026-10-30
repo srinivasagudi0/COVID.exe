@@ -26,6 +26,26 @@ h1 {
     font-size: clamp(40px, 6vw, 80px);
 }
 
+.header {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(1, 51, 1);
+    border: 2px solid rgb(4, 137, 4);
+    border-radius: 10px;
+    padding: 0 10px 0 0;
+}
+
+.header h1{
+    font-size: 1.3rem;
+    margin: 0;
+    padding: 0 10px;
+    font-weight: 900;
+    text-decoration: none;
+    color: rgb(3, 249, 3);
+}
+
+
 p {
     color: black;
     font-size: 20px;
