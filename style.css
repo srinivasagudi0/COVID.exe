@@ -1,5 +1,5 @@
 body {
-    background-color: rgba(255, 0, 0, 0.82);
+    background-color: rgb(8, 20, 0);
     min-height: 100vh;
     margin: 0;
     padding: 20px;
@@ -11,6 +11,27 @@ body {
     color: white;
     font-size: 5px;
     text-align: center;
+}
+
+.info-box {
+    background-color: rgba(0, 128, 0, 0.401);
+    border: 2px solid rgb(4, 137, 4);
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.info-box h2 {
+    font-size: clamp(28px, 4vw, 55px);
+    margin-top: 0;
+    color: rgba(255, 255, 255, 0.827);
+}
+
+.info-box p {
+    color: rgba(161, 213, 7, 0.827);
+    font-size: clamp(18px, 2vw, 25px);
+    line-height: 1.6;
+    font-style: italic;
 }
 
 h2 {
